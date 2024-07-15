@@ -1,6 +1,7 @@
 package com.games.thirdworld.auth.controller;
 
 import com.games.thirdworld.auth.dto.MemberJoinDto;
+import com.games.thirdworld.auth.dto.MemberLoginDto;
 import com.games.thirdworld.auth.entity.Member;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -20,7 +21,11 @@ public class AuthController {
     }
 
     @PostMapping("/login")
-    public ResponseEntity<Member> login(@RequestBody MemberJoinDto memberJoinDto) {
+    public ResponseEntity<Member> login(@RequestBody MemberLoginDto memberLoginDto) {
+
+
+
+
         return ResponseEntity.ok(null);
     }
 
