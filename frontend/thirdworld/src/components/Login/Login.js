@@ -4,6 +4,7 @@ import axios from 'axios';
 function Login() {
     const [id, setId] = useState('')
     const [password, setPassword] = useState('')
+    const [data, setData] = useState('')
 
     const handleId = (e) => {
         setId(e.target.value)
@@ -15,6 +16,10 @@ function Login() {
 
     const onClickLogin = () => {
         console.log('click login')
+
+        axios.post('http://localhost:8080/login').then(response => (
+            setData(response.data)
+        ));
     }
 
     return (
