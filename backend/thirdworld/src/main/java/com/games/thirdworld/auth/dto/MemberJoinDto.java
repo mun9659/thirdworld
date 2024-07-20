@@ -1,7 +1,11 @@
 package com.games.thirdworld.auth.dto;
 
-import lombok.Data;
+import lombok.Getter;
 
-@Data
+@Getter
 public class MemberJoinDto {
+
+    private String id;
+
+    private String password;
 }
