@@ -17,7 +17,7 @@ public class MemberService {
     public MemberDto createMember(MemberJoinDto memberJoinDto) {
 
         Member member = Member.builder()
-                .id(memberJoinDto.getId())
+                .memId(memberJoinDto.getMemId())
                 .password(memberJoinDto.getPassword())
                 .build();
 
@@ -28,7 +28,8 @@ public class MemberService {
 
     public MemberDto loginMember(MemberLoginDto memberLoginDto) {
 
-        Member member = memberRepository.findByIdAndPassword(memberLoginDto.toEntity()).orElseThrow();
+        Member member = memberRepository.findByMemIdAndPassword(memberLoginDto.getMemId(), memberLoginDto.getPassword())
+                .orElseThrow();
 
         return MemberDto.of(member);
     }

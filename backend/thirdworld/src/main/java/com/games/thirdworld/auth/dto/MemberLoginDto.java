@@ -7,14 +7,14 @@ import lombok.Getter;
 @Getter
 public class MemberLoginDto {
 
-    private String id;
+    private String memId;
 
     private String password;
 
     @Builder
     public Member toEntity() {
         return Member.builder()
-                .id(id)
+                .memId(memId)
                 .password(password)
                 .build();
     }

@@ -1,23 +1,25 @@
 package com.games.thirdworld.auth.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import lombok.Builder;
-import lombok.Data;
-import lombok.ToString;
+import jakarta.persistence.*;
+import lombok.*;
+import org.hibernate.annotations.DynamicInsert;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import java.time.LocalDateTime;
 
-@Builder
 @Entity
-@Data
-@ToString
+@Getter
+@EntityListeners(AuditingEntityListener.class)
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
+@DynamicInsert
 public class Member {
 
-    @Column(name = "memId")
-    private Long mem_id;
+    @Id
+    @GeneratedValue
+    @Column(name = "memberId")
+    private Long id;
 
-    private String id;
+    private String memId;
 
     private String password;
 
@@ -25,4 +27,10 @@ public class Member {
 
     private LocalDateTime updateDt;
 
+    @Builder
+    public Member(Long id, String memId, String password) {
+        this.id = id;
+        this.memId = memId;
+        this.password = password;
+    }
 }

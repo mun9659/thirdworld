@@ -11,9 +11,9 @@ import java.time.LocalDateTime;
 @Builder
 public class MemberDto {
 
-    private Long memId;
+    private Long id;
 
-    private String id;
+    private String memId;
 
     @JsonIgnore
     private String password;
@@ -24,8 +24,8 @@ public class MemberDto {
 
     public static MemberDto of(Member member) {
         return MemberDto.builder()
-                .memId(member.getMem_id())
                 .id(member.getId())
+                .memId(member.getMemId())
                 .createDt(member.getCreateDt())
                 .updateDt(member.getUpdateDt())
                 .build();
