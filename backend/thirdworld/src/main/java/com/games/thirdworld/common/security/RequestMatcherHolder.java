@@ -1,17 +1,17 @@
 package com.games.thirdworld.common.security;
 
-import jakarta.annotation.Nullable;
-import org.springframework.http.HttpMethod;
-import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
-import org.springframework.security.web.util.matcher.OrRequestMatcher;
-import org.springframework.security.web.util.matcher.RequestMatcher;
-import org.springframework.stereotype.Component;
+// import jakarta.annotation.Nullable;
+// import org.springframework.http.HttpMethod;
+// import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
+// import org.springframework.security.web.util.matcher.OrRequestMatcher;
+// import org.springframework.security.web.util.matcher.RequestMatcher;
+// import org.springframework.stereotype.Component;
+//
+// import java.util.List;
+// import java.util.Objects;
+// import java.util.concurrent.ConcurrentHashMap;
 
-import java.util.List;
-import java.util.Objects;
-import java.util.concurrent.ConcurrentHashMap;
-
-@Component
+// @Component
 public class RequestMatcherHolder {
 
     // private static final List<RequestInfo> REQUEST_INFO_LIST = List.of(
